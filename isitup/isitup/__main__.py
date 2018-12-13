@@ -1,12 +1,6 @@
 import requests
 from colorama import Fore
-from .functions import get_args
-
-def normalize_url(url):
-    if 'https://' not in url or 'http://' not in url:
-        return f'http://{url}'
-    else:
-        return url
+from .functions import get_args, normalize_url
 
 def main():
     args = get_args()

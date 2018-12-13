@@ -6,3 +6,10 @@ def get_args():
     return parser.parse_args()
 
 
+def normalize_url(url):
+    if 'https://' not in url or 'http://' not in url:
+        return f'http://{url}'
+    else:
+        return url
+
+
