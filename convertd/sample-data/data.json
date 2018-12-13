@@ -1,0 +1,14 @@
+[
+   {
+     "name": "Mr. Krinkle",
+     "age": 43,
+     "color": "blue",
+     "awesome": true
+   },
+   {
+     "name": "Mrs. Bayleen",
+     "age": 32,
+     "color": "green",
+     "awesome": false 
+   }
+]
