@@ -2,7 +2,7 @@ from docopt import docopt
 
 USAGE = """CONVERTD CLI
 Usage:
-    convertd [--format=<format>] FILE OUT
+    convertd [--format=<format>] FILE [OUT]
     convertd -h | --help
     convertd -v | --version
 
