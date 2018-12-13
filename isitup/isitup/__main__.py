@@ -1,11 +1,6 @@
-import argparse
 import requests
 from colorama import Fore
-
-def get_args():
-    parser = argparse.ArgumentParser(description="Check the status of a website")
-    parser.add_argument('url', type=str, help="url of the site to check")
-    return parser.parse_args()
+from .functions import get_args
 
 def main():
     args = get_args()

@@ -8,4 +8,8 @@ setup(
         'console_scripts': [
             'isitup = isitup.__main__:main'
         ]     
-    })
+    },
+    requires=[
+        'requests',
+        'colorama'
+    ])
