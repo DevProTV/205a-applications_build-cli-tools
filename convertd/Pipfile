@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 docopt = "*"
 colorama = "*"
+tablib = "*"
 
 [dev-packages]
 
