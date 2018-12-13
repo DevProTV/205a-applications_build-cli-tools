@@ -15,10 +15,11 @@ Options:
     -v --version        Show version.
     --format=<format>   Output format (json,csv) [default: json].
 """
+
+
 def get_args():
     return docopt(USAGE, version="convertd 0.1.0")
 
+
 def print_help():
     print(USAGE)
-
-

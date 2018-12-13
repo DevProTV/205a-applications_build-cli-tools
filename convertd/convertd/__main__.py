@@ -1,36 +1,37 @@
 import json
 from .cli import get_args, print_help
+from .functions import load_data, get_formatter
 
-from colorama import Fore
-from tablib import Dataset
+from colorama import Fore, Style
+
 
 def main():
     args = get_args()
-    filename = args['FILE']
-    outpath = args['OUT']
-    data_format = args['--format']
+    filename = args["FILE"]
+    outpath = args["OUT"]
+    data_format = args["--format"]
 
-    if data_format not in ('json', 'csv'):
-        print(f'Unsupported file format: {data_format}')
+    if data_format not in ("json", "csv"):
+        print(
+            (
+                f"{Fore.RED}{Style.BRIGHT}"
+                "Unsupported file format: "
+                f"{data_format}{Style.RESET_ALL}"
+            )
+        )
         print_help()
         return
 
-    with open(filename) as f:
-        raw = f.read()
-        data = Dataset().load(raw)
+    data = load_data(filename)
 
     if outpath is None:
-        if data_format == 'csv':
-            output = f'{Fore.YELLOW}{str(data)}'
-            print(output)
-        else: #if default or json
-            output = f'{Fore.YELLOW}{json.dumps(data.dict, indent=4)}'
-            print(output)
+        formatter = get_formatter(data_format)
+        output = f"{Fore.YELLOW}{formatter(data)}"
+        print(output)
     else:
-        with open(outpath, 'w') as f:
+        with open(outpath, "w") as f:
             f.write(data.export(data_format))
-         
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
