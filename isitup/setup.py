@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name="isitup",
@@ -8,6 +8,5 @@ setup(
         'console_scripts': [
             'isitup = isitup.__main__:main'
         ]     
-    },
-    packages = find_packages()
+    }
 )

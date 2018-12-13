@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 setup(
@@ -9,6 +9,5 @@ setup(
         'console_scripts': [
             'convertd = convertd.__main__:main'     
         ] 
-    },
-    packages=find_packages()
+    }
 )
