@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="isitup",
@@ -9,7 +9,5 @@ setup(
             'isitup = isitup.__main__:main'
         ]     
     },
-    requires=[
-        'requests',
-        'colorama'
-    ])
+    packages = find_packages()
+)

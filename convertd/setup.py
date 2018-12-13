@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -10,5 +10,5 @@ setup(
             'convertd = convertd.__main__:main'     
         ] 
     },
-    required=[]
+    packages=find_packages()
 )
