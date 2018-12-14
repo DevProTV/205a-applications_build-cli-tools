@@ -11,14 +11,18 @@ def main(src, width, height, image_type):
     """
         CLI to resize images.
     """
-    click.echo("Started resizing....")
+    click.echo(
+        click.style("Started resizing....", fg='red')
+    )
     im = Image.open(src)
     size = (width, height)
     original, ext = src.split(".")
     filename = f"{original}.{image_type}"
     im.thumbnail(size)
     im.save(filename)
-    click.echo("Finished resizing...")
+    click.echo(
+        click.style("Finished resizing...", fg='red')
+    )
 
 
 if __name__ == "__main__":
