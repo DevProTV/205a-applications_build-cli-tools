@@ -18,12 +18,20 @@ def main(src, width, height, image_type):
     size = (width, height)
     original, ext = src.split(".")
     filename = f"{original}.{image_type}"
-    im.thumbnail(size)
-    im.save(filename)
+    resized_image = im.resize(size)
+    resized_image.save(filename)
     click.echo(
         click.style("Finished resizing...", fg='red')
     )
 
+def resize(src, width, height, image_type):
+    pass
+
+def thumbnail(src, width, height, image_type):
+    pass
+
+def iconify(src):
+    pass
 
 if __name__ == "__main__":
     main()
